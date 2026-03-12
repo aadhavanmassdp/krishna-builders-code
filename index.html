@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Builders | Er. K.S. Krishna B.E.</title>
+
+    <!-- Fonts & Bootstrap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root { 
+            --gold: #c5a059;
+            --gold-grad: linear-gradient(135deg, #c5a059, #856a37);
+            --onyx: #1a1a1a;
+            --ivory: #fffdfa;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--ivory); color: #333; scroll-behavior: smooth; overflow-x: hidden; }
+        h1, h2, h3, .navbar-brand { font-family: 'Cinzel', serif; letter-spacing: 2px; }
+
+        .gold-text { background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; }
+        .section-padding { padding: 80px 0; }
+        
+        .btn-royal { background: var(--gold-grad); color: white; border: none; padding: 12px 30px; border-radius: 0; transition: var(--transition); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; text-decoration: none; display: inline-block; cursor: pointer; }
+        .btn-royal:hover { transform: scale(1.05); color: white; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        .navbar { background: rgba(26, 26, 26, 0.98); border-bottom: 2px solid var(--gold); backdrop-filter: blur(10px); }
+        .navbar-logo { height: 60px; width: auto; background: white; border-radius: 50%; padding: 2px; margin-right: 12px; border: 1px solid var(--gold); object-fit: contain; }
+        .nav-link { color: #fff !important; font-size: 0.8rem; letter-spacing: 1px; transition: var(--transition); }
+        .nav-link:hover { color: var(--gold) !important; }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&w=1920&q=80') center/cover;
+            height: 85vh; display: flex; align-items: center; color: white;
+        }
+
+        .about-img-frame { position: relative; padding: 20px; text-align: center; }
+        .about-img { position: relative; z-index: 1; width: 100%; max-width: 350px; box-shadow: 0 15px 30px rgba(0,0,0,0.2); border-radius: 50%; background: white; border: 5px solid var(--gold); object-fit: cover; }
+        .admin-thumb { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); margin-right: 15px; }
+
+        .service-card {
+            background: white; border: 1px solid rgba(197, 160, 89, 0.1);
+            transition: var(--transition); border-radius: 0; height: 100%; cursor: pointer;
+        }
+        .service-card:hover { border-color: var(--gold); transform: translateY(-10px); }
+        .icon-box { width: 60px; height: 60px; background: var(--gold-grad); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; }
+
+        .contact-box { background: var(--onyx); color: white; padding: 60px; }
+        .form-control { border-radius: 0; border: 1px solid #444; padding: 12px; background: transparent; color: white; }
+        .form-control:focus { border-color: var(--gold); box-shadow: none; background: rgba(255,255,255,0.05); color: white; }
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; }
+
+        #gallery-view { background: #f8f9fa; min-height: 100vh; }
+        .badge { font-weight: 400; letter-spacing: 0.5px; }
+        .card-img-top { object-fit: cover; background-color: #f0f0f0; height: 240px; }
+    </style>
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#" onclick="showHome()">
+                <img src="https://i.postimg.cc/d1wC1Wpk/IMG-20251231-082728-1.jpg" alt="Krishna Builders Logo" class="navbar-logo" onerror="this.src='https://placehold.co/60x60/c5a059/white?text=KB'">
+                <span class="d-none d-sm-inline">KRISHNA <span class="gold-text">BUILDERS</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-uppercase">
+                    <li class="nav-item"><a class="nav-link" href="#home" onclick="showHome()">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" onclick="showHome()">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services" onclick="showHome()">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" onclick="showHome()">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN VIEW -->
+    <main id="main-view">
+        <!-- Hero -->
+        <section id="home" class="hero">
+            <div class="container text-center text-md-start">
+                <div class="col-lg-8">
+                    <h5 class="text-uppercase mb-3 fw-light" style="letter-spacing: 4px;">BUILD YOUR DREAM</h5>
+                    <h1 class="display-3 fw-bold mb-2">Er. K.S. <span class="gold-text">KRISHNA</span> <small class="fs-4">B.E.,</small></h1>
+                    <p class="h5 fw-light mb-4 opacity-75">Licensed Building Surveyor & Civil Engineer</p>
+                    <p class="lead mb-5">From structural blueprints to stunning elevations. 4+ years of trust in Salem.</p>
+                    <a href="#contact" class="btn btn-royal me-3">Consult Now</a>
+                    <a href="#services" class="btn btn-outline-light rounded-0 px-4 py-3 text-decoration-none">View Works</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About with admin image -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5">
+                        <div class="about-img-frame">
+                            <img src="https://i.postimg.cc/d1wC1Wpk/IMG-20251231-082728-1.jpg" alt="Krishna Builders Logo" class="about-img" onerror="this.src='https://placehold.co/350x350/c5a059/white?text=KB'">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mt-3">
+                            <img src="https://i.postimg.cc/2Lyn1520/unnamed.jpg" alt="Er. K.S. Krishna" class="admin-thumb" onerror="this.src='https://placehold.co/80x80/c5a059/white?text=Eng'">
+                            <div class="text-start ms-3">
+                                <p class="fw-bold mb-0">Er. K.S. Krishna B.E.,</p>
+                                <p class="small text-muted">Founder & Licensed Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <h6 class="gold-text text-uppercase mb-3">Our Expertise</h6>
+                        <h2 class="display-6 fw-bold mb-4">Crafting Structures That Last</h2>
+                        <p class="text-muted mb-4">Under <strong>Er. K.S. Krishna</strong>, we specialize in government-approved surveying and modern architectural planning. We don't just build houses; we create landmarks.</p>
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <h5 class="fw-bold"><i class="bi bi-patch-check-fill gold-text me-2"></i>Licensed Engineer</h5>
+                                <p class="small text-muted">Authorized Civil Engineer and Surveyor in Salem.</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <h5 class="fw-bold"><i class="bi bi-building gold-text me-2"></i>Dream Elevation</h5>
+                                <p class="small text-muted">Specializing in 3D plans that bring your vision to life.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Cards -->
+        <section id="services" class="section-padding bg-light">
+            <div class="container text-center">
+                <h2 class="fw-bold text-uppercase mb-5">Our Core Services</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card p-5 service-card" onclick="openGallery('planning')">
+                            <div class="icon-box"><i class="bi bi-building"></i></div>
+                            <h4 class="h5 fw-bold">Approval & 3D Plan</h4>
+                            <p class="small text-muted">DTCP Approvals & High-Quality 3D Rendering.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-5 service-card" onclick="openGallery('engineering')">
+                            <div class="icon-box"><i class="bi bi-calculator"></i></div>
+                            <h4 class="h5 fw-bold">Design & Estimation</h4>
+                            <p class="small text-muted">Structural Layouts and Cost-Effective Estimation.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-5 service-card" onclick="openGallery('survey')">
+                            <div class="icon-box"><i class="bi bi-compass"></i></div>
+                            <h4 class="h5 fw-bold">Land Survey</h4>
+                            <p class="small text-muted">Digital Boundary Marking and Government Approvals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <div class="row g-0 shadow-lg">
+                    <div class="col-lg-5 contact-box">
+                        <h2 class="gold-text mb-4">Get in touch</h2>
+                        <div class="d-flex mb-4"><i class="bi bi-geo-alt gold-text fs-4 me-3"></i><p>14, Dharmalingam St No: 2, Line Medu, Salem - 636006</p></div>
+                        <div class="d-flex mb-4"><i class="bi bi-telephone gold-text fs-4 me-3"></i><p>+91 86672 23021 / 77081 72800</p></div>
+                        <div class="d-flex mb-4"><i class="bi bi-whatsapp gold-text fs-4 me-3"></i><p>+91 86672 23021 (WhatsApp)</p></div>
+                        <div class="d-flex mb-4"><i class="bi bi-envelope gold-text fs-4 me-3"></i><p>krishcivil1697@gmail.com</p></div>
+                        
+                        <hr class="my-4 opacity-25">
+                        
+                        <h5 class="gold-text mb-3" style="font-size:1.2rem;">📋 Send your requirement</h5>
+                        <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                            <div class="mb-3"><input type="text" name="name" class="form-control" placeholder="Full Name *" required></div>
+                            <div class="mb-3"><input type="tel" name="phone" class="form-control" placeholder="Phone Number *" required></div>
+                            <div class="mb-3"><textarea name="message" class="form-control" rows="3" placeholder="Tell us about your project..." required></textarea></div>
+                            <button type="submit" class="btn btn-royal w-100 mb-2">Send Inquiry</button>
+                            <div id="formStatus" class="mt-2 small text-center" style="display:none;"></div>
+                        </form>
+                    </div>
+                    <div class="col-lg-7">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15626.685324089943!2d78.1368541!3d11.6468494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf04265555555%3A0x6739023475d496e5!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                            width="100%" height="100%" style="border:0; min-height: 500px;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- GALLERY VIEW with updated civil engineering images -->
+    <div id="gallery-view" style="display: none;">
+        <header class="bg-dark py-5 text-center">
+            <div class="container">
+                <button onclick="showHome()" class="btn btn-outline-light mb-3"><i class="bi bi-arrow-left"></i> Home</button>
+                <h1 class="gold-text" id="gallery-title">Our Projects</h1>
+            </div>
+        </header>
+        <div class="container py-5">
+            <div class="row g-4" id="gallery-container"></div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="py-4 bg-dark text-center text-white-50">
+        <p class="small mb-0">© 2026 KRISHNA BUILDERS. ALL RIGHTS RESERVED. | Er. K.S. KRISHNA B.E.</p>
+    </footer>
+
+    <!-- WhatsApp float constant -->
+    <a href="https://wa.me/918667223021" class="whatsapp-float" target="_blank"><i class="bi bi-whatsapp"></i></a>
+
+    <script>
+        // UPDATED GALLERY DATA with civil engineering specific images
+        const galleryData = {
+            'planning': { 
+                title: "Approval & 3D Plans", 
+                items: [
+                    {title: "3D Villa Elevation", tag: "3D Render", img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80"},
+                    {title: "Modern Bungalow Design", tag: "3D View", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"}
+                ] 
+            },
+            'engineering': { 
+                title: "Design & Estimation", 
+                items: [
+                    // New civil engineering focused images: structural drawing & cost estimation blueprint
+                    {title: "Structural Beam Design", tag: "Estimation", img: "https://images.unsplash.com/photo-1621905251189-08b45d9a2691?auto=format&fit=crop&w=800&q=80"}, // civil blueprint
+                    {title: "Reinforcement Details", tag: "Quantity Takeoff", img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80"} // kept existing but relevant
+                ] 
+            },
+            'survey': { 
+                title: "Land Survey", 
+                items: [
+                    // New survey images specific to civil engineering: total station / field survey
+                    {title: "Total Station Survey", tag: "Boundary", img: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&w=800&q=80"}, // surveyor with instrument
+                    {title: "Topographic Mapping", tag: "Precision", img: "https://images.unsplash.com/photo-1504159506876-f8338247a14a?auto=format&fit=crop&w=800&q=80"} // kept, shows GPS/field work
+                ] 
+            }
+        };
+
+        function openGallery(cat) {
+            const category = galleryData[cat];
+            const container = document.getElementById('gallery-container');
+            document.getElementById('gallery-title').innerText = category.title;
+            container.innerHTML = category.items.map(item => `
+                <div class="col-md-6 col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="${item.img}" class="card-img-top" style="height: 260px; object-fit: cover;" onerror="this.src='https://placehold.co/800x600/c5a059/white?text=Project'">
+                        <div class="card-body text-center">
+                            <span class="badge bg-light text-dark mb-2">${item.tag}</span>
+                            <h5 class="fw-bold mb-0">${item.title}</h5>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('main-view').style.display = 'none';
+            document.getElementById('gallery-view').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() { 
+            document.getElementById('gallery-view').style.display = 'none'; 
+            document.getElementById('main-view').style.display = 'block'; 
+        }
+
+        // Form handling
+        const form = document.getElementById('contactForm');
+        const statusDiv = document.getElementById('formStatus');
+
+        async function handleFormSubmit(form, statusElement) {
+            statusElement.style.display = 'block';
+            statusElement.innerHTML = "Sending...";
+            const data = new FormData(form);
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    statusElement.innerHTML = "✅ Message sent successfully!";
+                    form.reset();
+                } else {
+                    statusElement.innerHTML = "❌ Oops! Something went wrong.";
+                }
+            } catch {
+                statusElement.innerHTML = "❌ Network error. Try again.";
+            }
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleFormSubmit(form, statusDiv);
+        });
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
