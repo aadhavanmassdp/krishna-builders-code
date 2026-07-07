@@ -162,3 +162,7 @@ To run the tests:
 1. Set up the project structure
 2. Update the BASE_URL in BaseTest.java
 3. Run `mvn clean test`
+
+link where tester using AI 
+
+https://tester.army/share/80ntvfik31h5
